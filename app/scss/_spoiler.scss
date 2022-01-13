@@ -1,0 +1,68 @@
+//? --------------------------- spoilers start ------------------------------//
+.spoilers {
+
+	&__item {
+		background-color: green;
+		color: #fff;
+		padding: 0 20px;
+		margin-bottom: 20px;
+	}
+
+	&__title {
+		padding: 15px 70px 15px 0;
+		position: relative;
+		cursor: pointer;
+
+		&::after,
+		&::before {
+			content: '';
+			position: absolute;
+			height: 20px;
+			width: 2px;
+			background-color: #fff;
+			top: 15px;
+			transform: translateY(-50%);
+		}
+
+		&::after {
+			transform: rotate(45deg);
+			right: 10px;
+		}
+
+		&::before {
+			transform: rotate(-45deg);
+			right: 24px;
+		}
+
+		&._active::after {
+			transform: rotate(-45deg);
+		}
+
+		&._active::before {
+			transform: rotate(45deg);
+		}
+	}
+
+	&__body {
+		padding: 10px 0 20px;
+		
+	}
+}
+
+//? --------------------------- spoilers media ----------------------------- //
+@media (max-width: $md1) {
+
+}
+
+@media (max-width: $md2) {
+
+}
+
+@media (max-width: $md3) {
+
+}
+
+@media (max-width: $md4) {
+	
+}
+//? ---------------------------- spoilers end ------------------------------- //

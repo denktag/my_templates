@@ -1,0 +1,52 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+html,
+body {
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	font-family: 'Arial', 'Helvetica', sans-serif;
+	@include adaptive(font-size, 16, 14, 3);
+	color: #000;
+
+	&.lock {
+		overflow: hidden;
+	}
+}
+
+.wrapper {
+	min-height: 100%;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	background-color: #000;
+}
+
+.page {
+	flex: 1 1 auto;
+}
+
+._container {
+	@include container(1230px);
+}
+
+
+//! ///////////////////////////////////////////////
+// .text-none {
+// 	font-size: 0;
+// }
+//! ///////////////////////////////////////////////
+
+
+
+
