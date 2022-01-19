@@ -11,8 +11,8 @@
 @import "../iconsfont/v4-shims.scss";
 
 // @import "_popup";
-// @import "_tab";
-// @import "_spoiler";
+@import "_tab";
+@import "_spoiler";
 @import "_header";
 
 
@@ -99,11 +99,6 @@
 
 //--------------------------- buttons start ------------------------------//
 .buttons {
-	display: flex;
-	align-items: center;
-	justify-content: space-around;
-	flex-wrap: wrap;
-	gap: 30px;
 
 	&__item	{
 		max-width: 200px;
@@ -115,7 +110,8 @@
 
 	&__btn {
 		width: 100%;
-		height: 60px;
+		min-width: 200px;
+		min-height: 60px;
 		border-radius: 5px;
 		text-transform: uppercase;
 		font-weight: 700;
@@ -385,18 +381,120 @@
 	}
 
 	&__btn-11 {
-		
+		color: #fff;
+		background: linear-gradient(90deg, rgba(179, 139, 255,1) 0%, rgba(75,0,130,1) 100%);
+		box-shadow: 12px 12px 24px rgba(207,177,255,.64);
+		padding: 10px;
+		border-radius: 1000px;
+		position: relative;
 
-		&:hover {
-			
+		&::before {
+			content: '';
+  		border-radius: 1000px;
+			width: 230px;
+			height: 88px;
+  		border: 6px solid #b38bff;
+  		box-shadow: 0 0 60px rgba(146,101,255,.64);
+  		position: absolute;
+  		top: 50%;
+  		left: 50%;
+  		transform: translate(-50%, -50%);
+  		opacity: 0;
+  		transition: all .3s ease-in-out 0s;
+		}
+		
+		&::after {
+			content: '';
+			width: 30px; 
+			height: 30px;
+			border-radius: 100%;
+			border: 6px solid #cfb1ff;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			animation: ring 1.5s infinite;
+		}
+
+		&:hover,
+		&:focus {
+			transform: translateY(-6px);
+		}
+
+		&:hover::before,
+		&:focus::before {
+			opacity: 1;
+		}
+
+		&:hover::after,
+		&:focus::after {
+			animation: none;
+			display: none;
+		}
+
+		@keyframes ring {
+			0% {
+				width: 30px;
+				height: 30px;
+				opacity: 1;
+			}
+			100% {
+				width: 250px;
+				height: 250px;
+				opacity: 0;
+			}
 		}
 	}
 
 	&__btn-12 {
-		
+		opacity: 1;
+		color: #fff;
+		position: relative;
+		text-align: center;
+		display: inline-block;
 
-		&:hover {
-			
+		&:after{
+			content: attr(data-back);
+			top: 0;
+			left: 0;
+			opacity: 0;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+			height: 100%;
+			color: #323237;
+			transition: .5s;
+			position: absolute;
+			background: #adadaf;
+			transform: translateY(-50%) rotateX(90deg);
+		}
+		
+		&:before{
+			content: attr(data-front);
+			top: 0;
+			left: 0;
+			opacity: 1;
+			color: #adadaf;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+			height: 100%;
+			transition: .5s;
+			position: relative;
+			background: #323237;
+			transform: translateY(0) rotateX(0);
+		}
+
+		&:hover::after {
+			opacity: 1;
+      transform: translateY(0) rotateX(0);
+		}
+
+		&:hover::before {
+			opacity: 0;
+      transform: translateY(50%) rotateX(90deg);
 		}
 	}
 
@@ -408,6 +506,75 @@
 		}
 	}
 
+	&__btn-14 {
+		
+
+		&:hover {
+			
+		}
+	}
+
+	&__btn-15 {
+		
+
+		&:hover {
+			
+		}
+	}
+
+	&__btn-16 {
+		
+
+		&:hover {
+			
+		}
+	}
+
+	&__btn-17 {
+		
+
+		&:hover {
+			
+		}
+	}
+
+}
+
+.buttons-tabs {
+
+	&__nav {
+		display: flex;
+		margin-bottom: 50px;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 4px;
+	}
+
+	&__item {
+		color: #000;
+		opacity: .3;
+		padding: 15px 30px;
+		font-size: 18px;
+		font-weight: 700;
+		transition: all .3s;
+		box-shadow: inset 0px 0px 6px 1px #000;
+		border-radius: 4px;
+		user-select: none;
+
+		&._active {
+			opacity: 1;
+		}
+	}
+
+	&__block {
+
+		&--one._active {
+			display: flex;
+			gap: 30px;
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+	}
 }
 
 

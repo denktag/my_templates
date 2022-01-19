@@ -1,46 +1,17 @@
 //? --------------------------- TAB start ---------------------------- //
 //* активному табу добавляем класс '_active'
 
-.tabs {
-	&__nav {
-		display: flex;
-		margin: 0 -2px;
-	}
-
-	&__item {
-		flex: 0 1 33.333%;
-		margin: 0 2px;
-		background-color: #7a956b;
-		padding: 20px;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		cursor: pointer;
-		color: #fff;
-		font-weight: 700;
-
-		&._active {
-			background-color: #77608d;
-		}
-	}
-
-	&__body {
-		padding-top: 20px;
-	}
-
-	&__block {
-	}
-}
-
 //* Технические классы
 ._tabs {	
 }
 
 ._tabs-item {
+	cursor: pointer;
 }
 
 ._tabs-block {
 	display: none;
+
 	&._active {
 		display: block;
 	}
